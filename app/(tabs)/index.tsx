@@ -9,6 +9,7 @@ import { useNotifications } from '@/hooks/notification-store';
 import { COLORS } from '@/constants/colors';
 import { Calendar, Bell, TrendingUp, Clock, Search, ArrowRight } from 'lucide-react-native';
 import { router } from 'expo-router';
+import { DatabaseStatus } from '@/components/DatabaseStatus';
 
 
 
@@ -47,6 +48,8 @@ export default function HomeScreen() {
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+      {/* Database Status - Only show in development */}
+      <DatabaseStatus showDetails={true} />
       {/* Header with gradient background */}
       <LinearGradient
         colors={[COLORS.backgroundPurple, COLORS.backgroundLight]}

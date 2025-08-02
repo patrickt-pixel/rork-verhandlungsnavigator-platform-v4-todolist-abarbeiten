@@ -48,5 +48,9 @@ export const MOCK_MODE = !isSupabaseConfigured();
 
 console.log('Supabase client initialized:', {
   url: supabaseUrl,
-  mockMode: MOCK_MODE
+  mockMode: MOCK_MODE,
+  hasUrl: !!process.env.EXPO_PUBLIC_SUPABASE_URL,
+  hasKey: !!process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
+  urlFromEnv: process.env.EXPO_PUBLIC_SUPABASE_URL,
+  keyFromEnv: process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ? 'Present' : 'Missing'
 });
